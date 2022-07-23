@@ -1,3 +1,11 @@
+# More stuff
+*.pkl
+*.gz
+*.zip
+*.csv
+jupyterlab/data-cache/*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
