@@ -16,9 +16,11 @@ def _fix_ids(df):
 
     columns = _get_id_columns(df)
     for col in columns:
-        df[f"int_id_{col}"] = df[col].str.replace(re.compile("^[a-zA-Z]+?([0-9]+)$"), integer_group).astype(int)
-
-    # df.rename(columns={col: f"str_id_{col}" for col in columns}, inplace=True)
+        df[f"int_id_{col}"] = (
+            df[col]
+            .str.replace(re.compile("^[a-zA-Z]+?([0-9]+)$"), integer_group)
+            .astype(int)
+        )
 
 
 def _get_id_columns(df):
@@ -42,6 +44,8 @@ def load_pickle(input_path):
 def load_imdb(dataset, postprocessor=clean_and_fix_ids, **kwargs):
     remote_root = "https://datasets.imdbws.com"
     file = f"{dataset}.tsv.gz"
-    path = get_local_or_remote(file, remote_root, _LOCAL_ROOT, postprocessor=postprocessor, **kwargs)
+    path = get_local_or_remote(
+        file, remote_root, _LOCAL_ROOT, postprocessor=postprocessor, **kwargs
+    )
     df = pd.read_pickle(path)
     return df, _get_id_columns(df)

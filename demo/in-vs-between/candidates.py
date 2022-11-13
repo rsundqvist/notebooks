@@ -50,4 +50,6 @@ class Candidates:
             return self._exec(between_clause)
 
         overfetch_factor = (max_id - min_id) / num_ids
-        return self._exec(in_clause if overfetch_factor > MAX_OVERFETCH_FACTOR else between_clause)
+        return self._exec(
+            in_clause if overfetch_factor > MAX_OVERFETCH_FACTOR else between_clause
+        )
