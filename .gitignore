@@ -3,7 +3,7 @@
 *.gz
 *.zip
 *.csv
-jupyterlab/data-cache/*
+**/data-cache/
 
 
 # Byte-compiled / optimized / DLL files
