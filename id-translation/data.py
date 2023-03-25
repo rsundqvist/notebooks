@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 import pandas as pd
-from rics.utility.misc import get_local_or_remote
+from rics.misc import get_local_or_remote
 
 _LOCAL_ROOT = Path(__file__).parent.joinpath("data-cache")
 

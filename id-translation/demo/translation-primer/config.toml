@@ -22,6 +22,9 @@ bitten_by = "animals"
 read_function = "read_csv"
 read_path_format= "./sources/{}.csv"
 
+[fetching.mapping]
+verbose_logging = true
+
 # ------------------------------------------------------------------------------
 # Placeholder mapping configuration. Binds actual names in sources (such as
 # column names in an SQL table) to wanted names, eg id = 'animal_id'.
