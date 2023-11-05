@@ -8,7 +8,7 @@ fmt = "[{title}. ]{name} (id={id})[ the {species}]"
 # Name-to-source mapping configuration. Binds names to source, eg 'cute_animals'
 # -> 'my_database.animals'. Overrides take precedence over scoring logic.
 [translator.mapping]
-score_function="equality"
+score_function = "equality"
 [[translator.mapping.score_function_heuristics]]
 function = "like_database_table"
 
@@ -20,10 +20,10 @@ bitten_by = "animals"
 ################################################################################
 [fetching.PandasFetcher]
 read_function = "read_csv"
-read_path_format= "./sources/{}.csv"
+read_path_format = "./sources/{}.csv"
 
 [fetching.mapping]
-verbose_logging = true
+verbose_logging = false
 
 # ------------------------------------------------------------------------------
 # Placeholder mapping configuration. Binds actual names in sources (such as

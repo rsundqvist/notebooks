@@ -6,7 +6,6 @@ MAX_OVERFETCH_FACTOR = 50
 
 class Candidates:
     def __init__(self, engine):
-
         self.engine = engine
         metadata = sqlalchemy.MetaData()
         metadata.reflect(engine)
